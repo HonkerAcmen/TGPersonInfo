@@ -1,0 +1,20 @@
+server:
+  host: 127.0.0.1
+  port: 7676
+  debug: true
+  
+
+mysql:
+  user: root
+  password: Air4045@
+  databasename: TGPersonInfo
+  host: 127.0.0.1
+  port: 3306
+  charset: utf8mb4
+
+log: 
+  projectname: TGPersonInfo
+  level: info
+  showline: true
+  isLog: true
+  
