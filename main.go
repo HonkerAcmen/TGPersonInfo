@@ -1,13 +1,13 @@
 package main
 
 import (
+	logging "TGPersonInfo/Logging"
 	"TGPersonInfo/common"
-	"TGPersonInfo/config"
-	"fmt"
+	"TGPersonInfo/model"
 )
 
 func main() {
 	common.InitConfig()
-	c := common.GetConfig()
-	fmt.Println(config.ServerConf.GetAddress(c.Server))
+	logging.InitLogger()
+	model.InitDB()
 }

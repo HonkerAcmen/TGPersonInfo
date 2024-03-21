@@ -12,5 +12,12 @@ type MysqlConf struct {
 }
 
 func (sql MysqlConf) DSN() string {
-	return fmt.Sprintf("")
+	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?%s",
+		sql.User,
+		sql.Password,
+		sql.Host,
+		sql.Port,
+		sql.Databasename,
+		sql.Charset,
+	)
 }
