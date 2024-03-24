@@ -3,7 +3,7 @@ package logging
 // 日志系统
 
 import (
-	"TGPersonInfo/common"
+	"TGPersonInfo/config"
 	"bytes"
 	"fmt"
 	"os"
@@ -24,7 +24,7 @@ type LogFormatter struct{}
 var _log *logrus.Logger
 
 func (t *LogFormatter) Format(entry *logrus.Entry) ([]byte, error) {
-	var conf = common.GetConfig()
+	var conf = config.GetConfig()
 	var levelColor int
 	// 等级颜色选择
 	switch entry.Level {
@@ -61,7 +61,7 @@ func (t *LogFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 }
 
 func InitLogger() {
-	var conf = common.GetConfig()
+	var conf = config.GetConfig()
 	mylog := logrus.New()                    // 新建一个实例
 	mylog.SetOutput(os.Stdout)               // 设置输出类型
 	mylog.SetReportCaller(conf.Log.Showline) // 开启返回函数名和行号

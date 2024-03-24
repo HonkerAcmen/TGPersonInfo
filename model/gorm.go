@@ -2,7 +2,7 @@ package model
 
 import (
 	logging "TGPersonInfo/Logging"
-	"TGPersonInfo/common"
+	"TGPersonInfo/config"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -12,7 +12,7 @@ import (
 var _db *gorm.DB
 
 func InitDB() {
-	var config = common.GetConfig()
+	var config = config.GetConfig()
 	var Logger = logging.GetLog()
 	if config.Mysql.Host == "" {
 		Logger.Fatalln("数据库Host为空")
